@@ -211,7 +211,7 @@ echo ""
 #################################################
 usercreate() {
 
-	useradd -s /sbin/nologin -d /home/${USERNAME}/ -G nginx ${USERNAME}
+	$(which useradd) -s /sbin/nologin -d /home/${USERNAME}/ -G nginx ${USERNAME}
 	USERID=$(id ${USERNAME})
 	cecho "---------------------------------------------------------------" $boldgreen
 	cecho "Create User: $USERNAME" $boldyellow
